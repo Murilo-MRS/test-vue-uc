@@ -25,6 +25,7 @@
   "rules": {
     "indent": ["error", 2],
     "vue/multi-word-component-names": 0,
+    "vue/comment-directive": 0,
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
