@@ -11,12 +11,13 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
+  ignorePatterns: ['*.config.ts', '*.config.js'],
   rules: {
-    'indent': ['error', 2],
+    indent: ['error', 2],
     'vue/multi-word-component-names': 0,
     'linebreak-style': ['error', 'unix'],
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'always'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': [
       'error',
