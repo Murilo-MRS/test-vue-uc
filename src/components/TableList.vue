@@ -65,6 +65,7 @@
             <td class="whitespace-nowrap px-4 py-2">
               <button
                 class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+                @click="handleEdit(employee as IEmployee)"
                 >
                 <PencilSquareIcon class="h-fit w-6 text-red" />
               </button>
@@ -82,7 +83,11 @@ import type { IEmployee } from '@/interfaces/IEmployee';
 import type { PropType } from 'vue';
 import { TrashIcon, XCircleIcon, CheckIcon, PencilSquareIcon } from '@heroicons/vue/24/outline';
 
-const emit = defineEmits(['delete', 'edit', 'confirm-delete']);
+const emit = defineEmits(['delete', 'edit', 'confirm-delete', 'confirm-edit']);
+
+const handleEditConfirmation = (employeeToUpdate: IEmployee) => {
+  emit('confirm-edit', employeeToUpdate);
+};
 
 const handleDeleteConfirmation = (id: number) => {
   emit('confirm-delete', id);
@@ -90,6 +95,10 @@ const handleDeleteConfirmation = (id: number) => {
 
 const handleRemove = () => {
   emit('delete');
+};
+
+const handleEdit = (employeeToUpdate: IEmployee) => {
+  emit('edit', employeeToUpdate);
 };
 
 defineProps({
