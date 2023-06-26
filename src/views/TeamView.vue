@@ -30,7 +30,7 @@
               class="w-full rounded-md h-[30px] pl-3 bg-gray-100 focus:outline-indigo-600"
             >
               <option value="DESENVOLVEDOR" selected>DESENVOLVEDOR</option>
-              <option value="TECH_LEAD" >TECH LEAD</option>
+              <option value="ADMINISTRADOR" >ADMINISTRADOR</option>
             </select>
           </div>
           <div class="px-2 container">
@@ -94,7 +94,7 @@
               class="w-full rounded-md h-[30px] pl-3 bg-gray-100 focus:outline-indigo-600"
             >
               <option value="DESENVOLVEDOR" selected>DESENVOLVEDOR</option>
-              <option value="TECH_LEAD" >TECH LEAD</option>
+              <option value="ADMIN" >TECH LEAD</option>
             </select>
           </div>
           <div class="px-2 container">
@@ -192,7 +192,9 @@ const handleEditUser = async (updatedUser: IEmployee) => {
   newEmployee.value = updatedUser;
   try {
     await api.put('/funcionario', newEmployee.value);
+
     team.value = await fetchTeam();
+
     newEmployee.value = {
       nome: '',
       sobrenome: '',
