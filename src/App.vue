@@ -8,8 +8,9 @@ import { RouterView } from 'vue-router';
         Lista de colaboradores
       </h1>
     </header>
-    <RouterView />
+    <RouterView class="bg-white" />
 </template>
 
 <style>
+
 </style>
